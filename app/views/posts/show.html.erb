@@ -1,0 +1,20 @@
+<h2>
+  <%= @post.title %>
+  <br> <br> 
+  <small>
+    <%= @post.created_at
+             .to_formatted_s(:long) %>
+  </small>
+</h2>
+<p>
+  <%= @post.context %>
+</p>
+<%= link_to 'Edit Post',
+    edit_post_path(@post),
+    class: 'btn btn-default' %><br>
+<%= link_to 'Delete Post',
+    post_path(@post),
+    method: :delete,
+    class: 'btn btn-default' %><br>
+<%= link_to 'Back to index >', posts_path,
+    class: 'pull-right' %>
